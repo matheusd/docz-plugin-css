@@ -1,5 +1,5 @@
 {
-  "name": "docz-plugin-css-no-sass",
+  "name": "docz-plugin-css",
   "version": "0.1.0",
   "description": "Clone of docz-plugin-css with node-sass removed",
   "license": "MIT",
