@@ -9,10 +9,9 @@ import { getLocalIdent } from './get-local-ident'
  * Tests
  */
 
-type PreProcessor = 'postcss' | 'sass' | 'less' | 'stylus'
+type PreProcessor = 'postcss' | 'less' | 'stylus'
 const tests: Record<PreProcessor, RegExp> = {
   postcss: /(\.module)?\.css$/,
-  sass: /(\.module)?\.s(a|c)ss$/,
   less: /(\.module)?\.less$/,
   stylus: /(\.module)?\.styl(us)?$/,
 }
@@ -66,12 +65,6 @@ const loaders = {
       })
     ),
 
-  sass: (opts: Opts = {}) =>
-    getStyleLoaders(
-      require.resolve('sass-loader'),
-      merge({ indentedSyntax: false }, opts)
-    ),
-
   less: (opts: Opts = {}) =>
     getStyleLoaders(require.resolve('less-loader'), opts),
 
@@ -113,7 +106,7 @@ const applyRule = (
 }
 
 export interface CSSPluginOptions {
-  preprocessor?: 'postcss' | 'sass' | 'less' | 'stylus'
+  preprocessor?: 'postcss' | 'less' | 'stylus'
   cssmodules?: boolean
   loaderOpts?: Opts
   cssOpts?: Opts

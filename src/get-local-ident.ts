@@ -6,9 +6,9 @@ export const getLocalIdent = (
   localName: any,
   options: any
 ) => {
-  // Use the filename or folder name, based on some uses the index.js / index.module.(css|scss|sass) project style
+  // Use the filename or folder name, based on some uses the index.js / index.module.(css|scss) project style
   const fileNameOrFolder = context.resourcePath.match(
-    /index\.module\.(css|scss|sass)$/
+    /index\.module\.(css|scss)$/
   )
     ? '[folder]'
     : '[name]'
