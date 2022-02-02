@@ -24,6 +24,7 @@
   "scripts": {
     "dev": "libundler watch --ts",
     "build": "libundler build --ts --c",
+    "prepare": "yarn run build",
     "fix": "run-s fix:*",
     "fix:prettier": "prettier \"src/**/*.{ts,tsx}\" --write",
     "fix:tslint": "tslint --fix --project .",
